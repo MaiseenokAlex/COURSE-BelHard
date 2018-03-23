@@ -2,7 +2,8 @@ package First_homework;
 
 public class Task12 {
 public static void main(String[] args) {
-	int[] mass=new int[15];
+	int n=15;
+	int[] mass=new int[n];
 	int min=100,max=-1;
 	int sum=0;
 	
@@ -24,47 +25,43 @@ public static void main(String[] args) {
 		for(int i:mass)
 			System.out.print(i+" ");
 	System.out.println("\nMin="+min+" Max="+max);
-	
-	int gate=0; //looking for submassive start.
-				//1 - submassive starts with max element
-				//2 - submassive starts with min element
-	String str=" ";
+//creating massive with min, max element positions
+	int[] minArr=new int[n];
+	int[] maxArr=new int[n];
+	int arg1=0,arg2=0;
 	for (int i = 0; i < mass.length; i++) {
-// if max before min
-		if(mass[i]==max){
-			switch(gate){
-			case 1:	sum=0;   //if meet another max element
-					str=" ";
-					break;
-			case 0: gate=1;  //if submassive starts
-					break;
-			case 2: gate=1;  //if submassive ends
-					str+=mass[i];
-					System.out.println("Element sum:"+str+"="+(sum+mass[i]));
-					sum=0;
-					break;
-			}
-		}
-//if min before max
 		if(mass[i]==min){
-			switch(gate){
-			case 2:	sum=0;   //if meet another max element
-					str=" ";
-					break;
-			case 0: gate=2;  //if submassive starts
-					break;
-			case 1: gate=2;  //if submassive ends
-					str+=mass[i];
-					System.out.println("Element sum:"+str+"="+(sum+mass[i]));
-					sum=0;
-					break;
+			minArr[arg1++]=i;
+		}
+		if(mass[i]==max){
+			maxArr[arg2++]=i;
+		}
+	}
+
+	String str=" ";
+	for (int i = 0; i < arg1; i++) {
+		for(int j = 0; j < arg2; j++){
+			if(minArr[i]<maxArr[j]){   // if min before max
+				for(int k=minArr[i];k<maxArr[j];k++){
+					sum+=mass[k];
+					str+=mass[k]+"+";
+				}
+				str+=mass[maxArr[j]];
+				System.out.println("Element sum:"+str+"="+(sum+mass[maxArr[j]]));
+				str=" ";
+				sum=0;
+			}
+			else{					  // if max before min
+				for(int k=maxArr[j];k<minArr[i];k++){ 
+					sum+=mass[k];
+					str+=mass[k]+"+";
+				}
+				str+=mass[minArr[i]];
+				System.out.println("Element sum:"+str+"="+(sum+mass[minArr[i]]));
+				str=" ";
+				sum=0;
 			}
 		}
-//maybe we found not submassive
-		if(gate!=0){
-			sum+=mass[i];
-			str+=mass[i]+"+";
-			}
 	}
 }
 }
