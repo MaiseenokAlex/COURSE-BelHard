@@ -10,12 +10,42 @@ public class Circle {
 	public Circle(Scanner sc) {
 		System.out.println("Input parameters");
 		System.out.print("Radius (double): ");
-		r=sc.nextDouble();
+		r=checkDoubleInput(sc);
 		System.out.print("x-coordinate: ");
-		x=sc.nextInt();
+		x=checkIntInput(sc);
 		System.out.print("y-coordinate: ");
-		y=sc.nextInt();
-		System.out.println("\n");
+		y=checkIntInput(sc);
+		System.out.println("");
+	}
+	
+	public double checkDoubleInput(Scanner sc){
+		boolean check=false;
+		double val;
+		while(!check)
+			if(sc.hasNextDouble()){
+				val=sc.nextDouble();
+				return val;
+				}
+			else{
+				System.out.println("Incorrect value. Input parameter again");
+				sc.next();
+				}
+		return 0;
+	}
+	
+	public int checkIntInput(Scanner sc){
+		boolean check=false;
+		int val;
+		while(!check)
+			if(sc.hasNextInt()){
+				val=sc.nextInt();
+				return val;
+				}
+			else{
+				System.out.println("Incorrect value. Input parameter again");
+				sc.next();
+				}
+		return 0;
 	}
 	
 	public double lengh(){
