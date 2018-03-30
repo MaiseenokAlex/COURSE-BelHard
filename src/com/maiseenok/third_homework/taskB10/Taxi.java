@@ -1,6 +1,8 @@
 package com.maiseenok.third_homework.taskB10;
 
-public abstract class Taxi implements Comparable<Taxi>{
+import java.util.Comparator;
+
+public class Taxi implements Comparable<Taxi>, Comparator<Taxi>{
 	private int price;
 	private int maxSpeed;
 	private double fuelConsume;
@@ -64,5 +66,10 @@ public abstract class Taxi implements Comparable<Taxi>{
 		System.out.println("Trip was started");
 	}
 	
-	public abstract boolean baggageLoading(double mass);
+	public boolean baggageLoading(double mass) {return true;}
+
+	@Override
+	public int compare(Taxi o1, Taxi o2) {
+		return (int)(o1.getFuelConsume() - o2.getFuelConsume())*100;
+	}
 }

@@ -1,5 +1,8 @@
 package com.maiseenok.third_homework.taskB10;
 
+import java.util.Arrays;
+import java.util.Comparator;
+
 public class TaskB10 {
 public static void main(String[] args) {
 	Sedan sd1=new Sedan();
@@ -12,7 +15,8 @@ public static void main(String[] args) {
 	System.out.println("Total price is "+tp.totalPrice()+"$");
 	System.out.println("\nTaxi list with max speed between 250 and 270:");
 	tp.diaSpeed(250, 270);
-	tp.sort();
+	Comparator <Taxi> taxiComparator=new Taxi();
+	Arrays.sort(tp.taxiPark, taxiComparator);
 	System.out.println("\nAfter sort "+tp);
 }
 }
