@@ -25,6 +25,6 @@ public static void main(String[] args) {
 	int i=0;
 	while(it.hasNext())
 		System.out.println((i++) +" "+ it.next().toString());
-	System.out.println(System.currentTimeMillis()-time);
+	System.out.println("Code time: "+(System.currentTimeMillis()-time));
 }
 }

@@ -1,11 +1,14 @@
 package com.maiseenok.fifth_homework.task2;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.Random;
 
 public class User implements Comparable<User>, Cloneable{
 	private String name;
 	private int age;
-	//private Calendar dateOfBirth;
+	private Calendar dateOfBirth;
 	
 	User(){
 		Random k=new Random();
@@ -13,23 +16,27 @@ public class User implements Comparable<User>, Cloneable{
 		for (int i = 0; i <3; i++) {
 			name+=(char)(65+k.nextInt(26));			
 		}
-		age=(k.nextInt(25)+35);
-		//dateOfBirth.getInstance();
-		//dateOfBirth.set(Calendar.YEAR, 1950);
-		//dateOfBirth.set(Calendar.DAY_OF_YEAR, k.nextInt(365));
+		age=(k.nextInt(35)+25);
+		dateOfBirth=new GregorianCalendar();
+		dateOfBirth.add(Calendar.YEAR, -age);
+		dateOfBirth.add(Calendar.MONTH, -k.nextInt(12));
+		dateOfBirth.add(Calendar.DAY_OF_YEAR, -k.nextInt(30));
 	}
 
 	
-	public User(String name, int age) {
+	public User(String name, int age, Calendar dateOfBirth) {
 		super();
 		this.name = name;
 		this.age = age;
+		this.dateOfBirth=dateOfBirth;
 	}
 
 
 	@Override
 	public String toString() {
-		return "User [name=" + name + ", age=" + age +"]";
+		SimpleDateFormat form = new SimpleDateFormat("yyyy-MM-dd");
+		return "User [name=" + name + ", age=" + age +", date of birth="+
+				form.format(dateOfBirth.getTime())+"]";
 	}
 
 	@Override
@@ -52,6 +59,8 @@ public class User implements Comparable<User>, Cloneable{
 		User other = (User) obj;
 		if (age != other.age)
 			return false;
+//		if (dateOfBirth!=other.dateOfBirth)
+//			return false;
 		if (name == null) {
 			if (other.name != null)
 				return false;
@@ -74,11 +83,10 @@ public class User implements Comparable<User>, Cloneable{
 			return -1;
 		if(age>o.age)
 			return 1;
-		// TODO Auto-generated method stub
 		return 0;
 	}
 	
 	public User clone() {
-		return new User(this.name,this.age);
+		return new User(this.name,this.age,this.dateOfBirth);
 	}
 }
