@@ -1,0 +1,55 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" >
+
+<xs:element name="readers">
+	<xs:complexType>
+	<xs:sequence>
+		<xs:element name="reader" minOccurs="1" maxOccurs="unbounded">
+			<xs:complexType>
+			<xs:sequence>
+			
+			<xs:element name="title">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+					<xs:maxLength value="40" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			
+			<xs:element name="author">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+					<xs:maxLength value="30" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			
+			<xs:element name="genre">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+					<xs:maxLength value="20" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			
+			<xs:element name="year">
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+					<xs:maxInclusive value="2018" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			
+			<xs:element name="isSoft">
+				<xs:complexType>
+					<xs:attribute name="value" type="xs:boolean" use="optional" default="false"/>
+				</xs:complexType>
+			</xs:element>
+			
+			</xs:sequence>
+			</xs:complexType>
+		</xs:element>
+	</xs:sequence>
+	</xs:complexType>
+</xs:element>
+
+</xs:schema>

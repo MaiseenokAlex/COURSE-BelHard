@@ -17,9 +17,14 @@ public static void main(String[] args){
 		fos.write(rand.nextInt(30));
 	}
 	
-	for (int i = 0; i < 20; i++) {
-		System.out.print(fis.read()+" ");
+	int sum=0;
+	int readed;
+	while (fis.available()!=0) {
+		readed=(int)fis.read();
+		sum+=readed;
+		System.out.print(readed+" ");
 	}
+	System.out.println("\nMean value: "+(double)sum/20);
 	
 	}
 	catch(IOException e) {

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<readers>
+	<reader>
+		<title>Мастер и Маргарита</title>
+		<author>М. Булгаков</author>
+		<genre>Роман</genre>
+		<year>2001</year>
+		<isSoft value="false"/>
+	</reader>
+	<reader>
+		<title>Белый Клык</title>
+		<author>Дж. Лондон</author>
+		<genre>Приключения</genre>
+		<year>2003</year>
+		<isSoft value="false"/>
+	</reader>
+	
+	<reader>
+		<title>451 градус по Фаренгейту</title>
+		<author>Р. Брэдбери</author>
+		<genre>Фантастика</genre>
+		<year>2007</year>
+		<isSoft value="false"/>
+	</reader>
+	
+	<reader>
+		<title>Маленький Принц</title>
+		<author>А. Сент-Экзюпери</author>
+		<genre>Сказка</genre>
+		<year>2001</year>
+		<isSoft value="false"/>
+	</reader>
+	
+	<reader>
+		<title>Башня желаний</title>
+		<author>Д. Донцова</author>
+		<genre>Детектив</genre>
+		<year>2015</year>
+		<isSoft value="true"/>
+	</reader>
+	
+	<reader>
+		<title>Божественная комедия</title>
+		<author>Д. Алигьери</author>
+		<genre>Эпос</genre>
+		<year>1998</year>
+		<isSoft value="false"/>
+	</reader>
+	
+	<reader>
+		<title>1984</title>
+		<author>Дж. Оруэлл</author>
+		<genre>Фантастика</genre>
+		<year>2005</year>
+		<isSoft value="false"/>
+	</reader>
+	
+	<reader>
+		<title>Иллиада</title>
+		<author>Гомер</author>
+		<genre>Мифы</genre>
+		<year>1998</year>
+		<isSoft value="false"/>
+	</reader>
+	
+	<reader>
+		<title>Великий Гэтсби</title>
+		<author>Ф.С. Фитцджеральд</author>
+		<genre>Роман</genre>
+		<year>2010</year>
+		<isSoft value="false"/>
+	</reader>
+	
+	<reader>
+		<title>Война бесконечности</title>
+		<author>Marvel std.</author>
+		<genre>Комикс</genre>
+		<year>2010</year>
+		<isSoft value="true"/>
+	</reader>
+	
+	<reader>
+		<title>Призрак Готема</title>
+		<author>DC</author>
+		<genre>Комикс</genre>
+		<year>2014</year>
+		<isSoft value="true"/>
+	</reader>
+	
+	<reader>
+		<title>Лучшие сканворды</title>
+		<author>Всё для дома</author>
+		<genre>Журнал</genre>
+		<year>2016</year>
+		<isSoft value="true"/>
+	</reader>
+</readers>
