@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Devices>
+	<Device>
+		<Name>Keyboard Lenovo</Name>
+		<Serial>HH-0069G</Serial>
+		<Origin>China</Origin>
+		<Price>20</Price>
+		<Type peripheral="true" cooler="false">
+			<group>IO</group>
+			<port>USB</port>
+			<consumption>20</consumption>
+		</Type>
+		<Critical value="true" />
+	</Device>
+
+	<Device>
+		<Name>Monitor</Name>
+		<Serial>Mo-24lsd</Serial>
+		<Origin>Germany</Origin>
+		<Price>65</Price>
+		<Type peripheral="true" cooler="false">
+			<group>IO</group>
+			<port>COM</port>
+			<consumption>100</consumption>
+		</Type>
+		<Critical />
+	</Device>
+
+	<Device>
+		<Name>MP3-Player</Name>
+		<Serial>Pl-15lsd</Serial>
+		<Origin>China</Origin>
+		<Price>5</Price>
+		<Type peripheral="false" cooler="false">
+			<group>Media</group>
+			<port>USB</port>
+			<consumption>5</consumption>
+		</Type>
+		<Critical value="false" />
+	</Device>
+</Devices>

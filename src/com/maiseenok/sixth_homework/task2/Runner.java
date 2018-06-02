@@ -6,10 +6,10 @@ import java.io.IOException;
 
 public class Runner {
 public static void main(String[] args) {
-	File dir=new File("src/com/kashanok/belhard/lesson9");
+	File dir=new File("src/com/maiseenok");
 	String[] path = dir.list();
 	
-	File file=new File("catalogList.txt");
+	File file=new File("src/com/maiseenok/sixth_homework/task2/catalogList.txt");
 	try(FileWriter fos=new FileWriter(file)){
 		for (int i = 0; i < path.length; i++) {
 			if(path[i].indexOf(".")!=-1) {

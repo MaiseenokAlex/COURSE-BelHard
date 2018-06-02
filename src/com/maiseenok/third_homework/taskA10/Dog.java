@@ -1,19 +1,22 @@
 package com.maiseenok.third_homework.taskA10;
 
-public class Dog implements Animal{
+import java.io.Serializable;
+
+public class Dog implements Animal, Serializable {
+	private static final long serialVersionUID = 148759303918L;
 	private double mass;
 	private String name;
-	
-	public Dog(){
-		mass=0;
-		name="noname";
+
+	public Dog() {
+		mass = 0;
+		name = "noname";
 	}
-	
-	public Dog(double mass,String name){
-		this.mass=mass;
-		this.name=name;
+
+	public Dog(double mass, String name) {
+		this.mass = mass;
+		this.name = name;
 	}
-	
+
 	public void voice() {
 		System.out.println("Woof-woof!");
 	}
@@ -21,15 +24,15 @@ public class Dog implements Animal{
 	public void jump() {
 		System.out.println("Up in the air");
 	}
-	
+
 	public void run() {
 		System.out.println("I'm fast and furious");
 	}
-	
+
 	public void bite() {
 		System.out.println("Strong bite");
 	}
-	
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -62,7 +65,7 @@ public class Dog implements Animal{
 
 	@Override
 	public String toString() {
-		return "dog name is " + name +", mass=" + mass;
+		return "dog name is " + name + ", mass=" + mass;
 	}
 
 	public double getMass() {

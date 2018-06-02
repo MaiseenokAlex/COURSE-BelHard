@@ -2,57 +2,56 @@ package com.maiseenok.third_homework.taskA1;
 
 import java.util.Arrays;
 
-//while we don't know Collections
-public class Sentence{
+public class Sentence {
 	private Word[] words;
 
 	public Sentence(Word[] words) {
 		this.words = words;
 	}
-	
+
 	public void add(Word newWord) {
-		Word[] wd=new Word[words.length+1];
+		Word[] wd = new Word[words.length + 1];
 		for (int i = 0; i < words.length; i++) {
-			wd[i]=words[i];
+			wd[i] = words[i];
 		}
-		wd[words.length]=newWord;
-		words=wd;
+		wd[words.length] = newWord;
+		words = wd;
 	}
-	
+
 	public boolean remove(int position) {
-		if(words.length<position) {
+		if (words.length < position) {
 			System.out.println("Value is too large");
 			return false;
 		}
-		Word[] wd=new Word[words.length-1];
-		for (int i = 0,j=0; i < words.length; i++) {
-			if(i!=position)
-				wd[j++]=words[i];
+		Word[] wd = new Word[words.length - 1];
+		for (int i = 0, j = 0; i < words.length; i++) {
+			if (i != position)
+				wd[j++] = words[i];
 		}
-		words=wd;
+		words = wd;
 		return true;
 	}
-	
+
 	public boolean remove(Word delWord) {
-		boolean res=false;
-		int count=0;
+		boolean res = false;
+		int count = 0;
 		for (int i = 0; i < words.length; i++) {
-			if(words[i].equals(delWord)) {
+			if (words[i].equals(delWord)) {
 				count++;
-				res=true;
-				}
-		}
-		if(res) {
-			Word[] wd=new Word[words.length-count];
-			for (int i = 0,j=0; i < words.length; i++) {
-				if(!words[i].equals(delWord))
-					wd[j++]=words[i];
+				res = true;
 			}
-			words=wd;
+		}
+		if (res) {
+			Word[] wd = new Word[words.length - count];
+			for (int i = 0, j = 0; i < words.length; i++) {
+				if (!words[i].equals(delWord))
+					wd[j++] = words[i];
+			}
+			words = wd;
 		}
 		return res;
 	}
-	
+
 	public Word[] getWords() {
 		return words;
 	}
@@ -66,7 +65,7 @@ public class Sentence{
 		final int prime = 2;
 		int result = 1;
 		for (int i = 0; i < words.length; i++) {
-			result+=prime*words[i].hashCode();
+			result += prime * words[i].hashCode();
 		}
 		return result;
 	}
@@ -87,13 +86,12 @@ public class Sentence{
 
 	@Override
 	public String toString() {
-		String str=" ";
+		String str = " ";
 		for (int i = 0; i < words.length; i++) {
-			str+=" "+words[i].getWord();
+			str += " " + words[i].getWord();
 		}
-		str+=".";
+		str += ".";
 		return str.trim();
 	}
-	
-	
+
 }

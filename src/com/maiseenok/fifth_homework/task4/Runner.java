@@ -8,6 +8,7 @@ public class Runner {
 public static void main(String[] args) throws NoSuchMethodException,
 								SecurityException, InstantiationException, IllegalAccessException, 
 								IllegalArgumentException, InvocationTargetException {
+	
 	if(MyService.class.isAnnotationPresent(Version.class)) {
 		Constructor<MyService> construct=MyService.class.getConstructor();
 		MyService ms=construct.newInstance();
@@ -16,17 +17,14 @@ public static void main(String[] args) throws NoSuchMethodException,
 		for (int i = 0; i < methods.length; i++) {
 			if(methods[i].getName().equals("setGuestName")) {
 				Method m = methods[i];
-				m.setAccessible(true);
 				m.invoke(ms, "Ivanov");
 			}
 			if(methods[i].getName().equals("setRooms")) {
 				Method m = methods[i];
-				m.setAccessible(true);
 				m.invoke(ms, 3);
 			}
 			if(methods[i].getName().equals("setDays")) {
 				Method m = methods[i];
-				m.setAccessible(true);
 				m.invoke(ms, 10);
 			}
 		}
@@ -34,9 +32,10 @@ public static void main(String[] args) throws NoSuchMethodException,
 			if(methods[i].getName().equals("thisClassInfo")) {
 				Method m = methods[i];
 				m.setAccessible(true);
-				m.invoke(ms, null);
+				m.invoke(ms, 1);
 			}
 		}
+		System.out.println(ms);
 	}
 }
 }

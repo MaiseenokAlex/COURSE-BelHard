@@ -5,26 +5,26 @@ import java.util.Random;
 
 public class CollectionMod {
 	public static void generate(Collection<Integer> col) {
-		Random rand=new Random();
-		for (int i = 0; i < 100; i++)
+		Random rand = new Random();
+		for (int i = 0; i < 40; i++)
 			col.add(rand.nextInt(200));
 	}
-	
+
 	public static int add(Collection<Integer> col) {
-		long time=System.nanoTime();
+		long time = System.nanoTime();
 		col.add(201);
-		return (int)(System.nanoTime()-time);
+		return (int) (System.nanoTime() - time);
 	}
-	
+
 	public static int search(Collection<Integer> col, int elem) {
-		long time=System.nanoTime();
+		long time = System.nanoTime();
 		col.contains(elem);
-		return (int)(System.nanoTime()-time);
+		return (int) (System.nanoTime() - time);
 	}
-	
+
 	public static int remove(Collection<Integer> col, int elem) {
-		long time=System.nanoTime();
-			col.remove(elem);
-		return (int)(System.nanoTime()-time);
+		long time = System.nanoTime();
+		col.remove(elem);
+		return (int) (System.nanoTime() - time);
 	}
 }

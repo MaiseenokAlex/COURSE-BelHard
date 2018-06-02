@@ -1,29 +1,40 @@
 package com.maiseenok.forth_homework.task2;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class Storage <T>{
-	private List<T> elements;
+public class Storage<T> {
+	private Object[] mass = new Object[10];
+	private int counter;
 
 	public Storage() {
-		elements=new ArrayList<>();
+		counter = 0;
 	}
 	
 	public void add(T newElement) {
-		elements.add(newElement);
+		if (counter == mass.length) {
+			Object[] mass1 = new Object[mass.length * 2];
+			for (int i = 0; i < mass.length; i++) {
+				mass1[i] = mass[i];
+			}
+			mass = mass1;
+		}
+		mass[counter++] = newElement;
 	}
-	
+
+	@SuppressWarnings("unchecked")
 	public T get(int i) {
-		return elements.get(i);
+		return (T) mass[i];
 	}
-	
-	public List<T> getElements() {
-		return elements;
+
+	@SuppressWarnings("unchecked")
+	public T[] getElements() {
+		return (T[]) mass;
 	}
-	
+
 	@Override
 	public String toString() {
-		return "Storage elements=" + elements;
+		String str = "Storage elements = ";
+		for (int i = 0; i < mass.length; i++) {
+			str += mass[i] + " ";
+		}
+		return str;
 	}
 }

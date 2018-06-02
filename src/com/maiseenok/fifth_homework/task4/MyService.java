@@ -17,7 +17,8 @@ public class MyService {
 		this.days = days;
 	}
 
-	private void thisClassInfo() {
+	@SuppressWarnings("unused")
+	private void thisClassInfo(int i) {
 		System.out.println("Class Name: "+getClass().getSimpleName());
 		System.out.println("Fields presence: String guestName, int rooms, int days");
 	}
@@ -25,7 +26,11 @@ public class MyService {
 	public String getGuestName() {
 		return guestName;
 	}
-	
+	@Override
+	public String toString() {
+		return "MyService [guestName=" + guestName + ", rooms=" + rooms + ", days=" + days + "]";
+	}
+
 	public void setGuestName(String guestName) {
 		this.guestName = guestName;
 	}

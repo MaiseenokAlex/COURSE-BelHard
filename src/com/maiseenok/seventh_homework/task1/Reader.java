@@ -1,4 +1,5 @@
 package com.maiseenok.seventh_homework.task1;
+
 /*
  * Книга, которая может быть либо художественной книгой, либо журналом
 */
@@ -8,20 +9,20 @@ public class Reader {
 	private String genre;
 	private int year;
 	private boolean readOnly;
-	
+
 	public Reader() {
 	}
-	
+
 	@Override
 	public String toString() {
-		return " Title = " + title + ",\n Author = " + author + ",\n Genre = " + genre + ",\n"
-				+ " Year = " + year + ",\n ReadOnly = " + readOnly+"\n" ;
+		return " Title = " + title + ",\n Author = " + author + ",\n Genre = " + genre + ",\n" + " Year = " + year
+				+ ",\n ReadOnly = " + readOnly + "\n";
 	}
 
 	public String getTitle() {
 		return title;
 	}
-	
+
 	public String getAuthor() {
 		return author;
 	}

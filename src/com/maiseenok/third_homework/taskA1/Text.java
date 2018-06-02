@@ -5,61 +5,61 @@ import java.util.Arrays;
 public class Text {
 	private String header;
 	private Sentence[] content;
-	
+
 	public Text(String header, Sentence[] content) {
-		this.header=header;
-		this.content=content;
+		this.header = header.toUpperCase();
+		this.content = content;
 	}
 
 	public void add(Sentence newSTC) {
-		Sentence[] stc=new Sentence[content.length+1];
+		Sentence[] stc = new Sentence[content.length + 1];
 		for (int i = 0; i < content.length; i++) {
-			stc[i]=content[i];
+			stc[i] = content[i];
 		}
-		stc[content.length]=newSTC;
-		content=stc;
+		stc[content.length] = newSTC;
+		content = stc;
 	}
-	
+
 	public boolean remove(int position) {
-		if(content.length<position) {
+		if (content.length < position) {
 			System.out.println("Value is too large");
 			return false;
 		}
-		Sentence[] stc=new Sentence[content.length-1];
-		for (int i = 0,j=0; i < content.length; i++) {
-			if(i!=position)
-				stc[j++]=content[i];
+		Sentence[] stc = new Sentence[content.length - 1];
+		for (int i = 0, j = 0; i < content.length; i++) {
+			if (i != position)
+				stc[j++] = content[i];
 		}
-		content=stc;
+		content = stc;
 		return true;
 	}
-	
+
 	public boolean remove(Sentence delSTC) {
-		boolean res=false;
-		int count=0;
+		boolean res = false;
+		int count = 0;
 		for (int i = 0; i < content.length; i++) {
-			if(content[i].equals(delSTC)) {
+			if (content[i].equals(delSTC)) {
 				count++;
-				res=true;
-				}
-		}
-		if(res) {
-			Sentence[] stc=new Sentence[content.length-count];
-			for (int i = 0,j=0; i < content.length; i++) {
-				if(!content[i].equals(delSTC))
-					stc[j++]=content[i];
+				res = true;
 			}
-			content=stc;
+		}
+		if (res) {
+			Sentence[] stc = new Sentence[content.length - count];
+			for (int i = 0, j = 0; i < content.length; i++) {
+				if (!content[i].equals(delSTC))
+					stc[j++] = content[i];
+			}
+			content = stc;
 		}
 		return res;
 	}
-	
+
 	@Override
 	public int hashCode() {
 		final int prime = 2;
 		int result = 1;
 		for (int i = 0; i < content.length; i++) {
-			result+=prime*content[i].hashCode();
+			result += prime * content[i].hashCode();
 		}
 		return result;
 	}
@@ -85,9 +85,9 @@ public class Text {
 
 	@Override
 	public String toString() {
-		String str=header+"\n";
+		String str = header + "\n";
 		for (int i = 0; i < content.length; i++) {
-			str+=content[i]+" ";
+			str += content[i] + " ";
 		}
 		return str;
 	}
@@ -97,7 +97,7 @@ public class Text {
 	}
 
 	public void setHeader(String header) {
-		this.header = header;
+		this.header = header.toUpperCase();
 	}
 
 	public Sentence[] getContent() {
@@ -107,5 +107,5 @@ public class Text {
 	public void setContent(Sentence[] content) {
 		this.content = content;
 	}
-	
+
 }
