@@ -1,0 +1,10 @@
+servlet\AddCatServlet.class
+servlet\CatServlet.class
+model\CatsNode.class
+servlet\GetCatServlet.class
+servlet\TakeCatServlet.class
+dao\CatsDAO.class
+model\Cats.class
+util\DataGetter.class
+dao\CatsDAOImpl.class
+model\Gender.class
